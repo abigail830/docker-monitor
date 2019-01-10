@@ -18,4 +18,4 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
         print("{}".format(json_result))
 
         self._set_headers()
-        self.wfile.write(json_result)
+        self.wfile.write(bytes(json_result))
