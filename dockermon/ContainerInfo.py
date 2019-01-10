@@ -7,8 +7,8 @@ class ContainerInfo:
         self.status = status
         self.ports = ports
         for port in ports:
-            # port_info = PortInfo(port['PrivatePort'], port['PublicPort'])
-            # self.ports.append(port_info)
+            port_info = PortInfo(port['PrivatePort'])
+            self.ports.append(port_info)
             print("{}".format(port))
 
     def __str__(self):

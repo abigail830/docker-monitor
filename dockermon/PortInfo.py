@@ -1,9 +1,8 @@
 class PortInfo:
 
-    def __init__(self, privatePort, publicPort):
+    def __init__(self, privatePort):
         self.privatePort = privatePort
-        self.publicPort = publicPort
 
     def __str__(self):
-        result = "{}->{}".format(self.publicPort, self.privatePort)
+        result = "->{}".format(self.privatePort)
         return result
