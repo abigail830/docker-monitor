@@ -9,7 +9,7 @@ class ContainerInfo:
 
         self.ports = []
         for port in ports:
-            port_info = PortInfo(port['PrivatePort'])
+            port_info = PortInfo(port)
             self.ports.append(port_info.__str__())
 
     def __str__(self):
