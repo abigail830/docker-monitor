@@ -3,7 +3,7 @@ from dockermon.PortInfo import PortInfo
 class ContainerInfo:
 
     def __init__(self, name, ports, status):
-        self.name = name[name.index('/'):]
+        self.name = name
         self.status = status
         self.ports = []
         for port in ports:
