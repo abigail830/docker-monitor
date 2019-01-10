@@ -28,6 +28,6 @@ class ContainerInfoCollector:
             # print("{}".format(item_info.__str__()))
             info_list.append(item_info)
 
-        json_result = json.dumps(info_list.__dict__)
+        json_result = json.dumps([info.__dict__ for info in info_list])
         print("{}".format(json_result))
         return json_result
