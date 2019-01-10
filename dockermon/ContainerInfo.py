@@ -2,16 +2,23 @@ from dockermon.PortInfo import PortInfo
 
 
 class ContainerInfo:
+    name = 'Nil'
+    status = 'Nil'
+    ports = []
 
-    def __init__(self, name, ports, status):
-        self.name = name
-        self.status = status
+    def __init__(self, container):
 
-        self.ports = []
-        for port in ports:
-            port_info = PortInfo(port)
-            self.ports.append(port_info.__str__())
+        if 'Names' in container.keys():
+            self.name = container['Names']
+
+        if 'State' in container.keys():
+            self.state = container['State']
+
+        if 'Ports' in container.keys():
+            for port in container['Ports']:
+                port_info = PortInfo(port)
+                self.ports.append(port_info)
 
     def __str__(self):
-        result = "Docker {} with Ports {} is {}".format(self.name, self.ports, self.status)
+        result = "Docker {} is {} with Ports {} ".format(self.name, self.state, self.ports)
         return result
