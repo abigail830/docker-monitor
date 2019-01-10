@@ -24,6 +24,7 @@ class ContainerInfoCollector:
         info_list=[]
         for item in resp.json():
             item_info = ContainerInfo(item['Names'], item['Ports'], item['Status'])
+            print("{}".format(item_info.__str__()))
             info_list.append(item_info)
 
         print("{}".format(info_list))
