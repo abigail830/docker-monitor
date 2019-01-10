@@ -1,5 +1,4 @@
 import requests_unixsocket
-import json
 from dockermon.ContainerInfo import ContainerInfo
 from util.util import Utils
 u = Utils()
@@ -27,6 +26,4 @@ class ContainerInfoCollector:
             item_info = ContainerInfo(item)
             info_list.append(item_info)
 
-        json_result = json.dumps([info.__dict__ for info in info_list])
-        print("{}".format(json_result))
-        return json_result
+        return info_list
