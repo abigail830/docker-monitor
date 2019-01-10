@@ -25,7 +25,6 @@ class ContainerInfoCollector:
         info_list=[]
         for item in resp.json():
             item_info = ContainerInfo(item)
-            # print("{}".format(item_info.__str__()))
             info_list.append(item_info)
 
         json_result = json.dumps([info.__dict__ for info in info_list])
