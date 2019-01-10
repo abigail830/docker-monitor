@@ -2,14 +2,15 @@ from dockermon.PortInfo import PortInfo
 
 
 class ContainerInfo:
-    name = 'Nil'
+    names = []
     status = 'Nil'
     ports = []
 
     def __init__(self, container):
 
         if 'Names' in container.keys():
-            self.name = container['Names']
+            for name in container['Names']:
+                self.names.append(name)
 
         if 'State' in container.keys():
             self.state = container['State']
