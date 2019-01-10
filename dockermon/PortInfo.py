@@ -4,10 +4,10 @@ class PortInfo:
     publicPort = 'Nil'
 
     def __init__(self, port):
-        if hasattr(port, 'PrivatePort'):
+        if 'PrivatePort' in port.keys():
             self.privatePort = port['PrivatePort']
 
-        if hasattr(port, 'PublicPort'):
+        if 'PublicPort' in port.keys():
             self.publicPort = port['PublicPort']
 
     def __str__(self):
